@@ -12,6 +12,10 @@ public class LibraryManager {
 
     public void listBooks() {
         System.out.println("\n--- Güncel Kütüphane Kitap Listesi ---");
+        if (bookList.isEmpty()) {
+            System.out.println("Kütüphanede henüz kitap yok.");
+            return;
+        }
         for (Book book : bookList) {
             System.out.println(book);
         }
@@ -29,6 +33,6 @@ public class LibraryManager {
                 return;
             }
         }
-        System.out.println("Hata: Kitap bulunamadı.");
+        System.out.println("Hata: " + isbn + " numaralı kitap bulunamadı.");
     }
 }
